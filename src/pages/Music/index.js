@@ -3,21 +3,11 @@ import { useLocation, useParams } from 'react-router-dom';
 
 import './styles.scss';
 
-function Music(props){
+function Music(){
   
-  const getJsonFromUrl = str => {
-    const query = str.substr(1);
-    const result = {};
-  
-    query.split('&').forEach(function(part) {
-      const item = part.split('=');
-      result[item[0]] = decodeURIComponent(item[1]);
-    });
-  
-    return result;
-  };
-  
-  const { access_token, token_type } = getJsonFromUrl(props.location.hash);
+  const location = useLocation();
+  const [fullHash] = location.hash.split('&');
+  const [, accessToken] = fullHash.split('=');
   useEffect(() => {
     
     fetchData()
@@ -25,14 +15,34 @@ function Music(props){
 
   async function fetchData(){
     
-    const data = await fetch('https://api.spotify.com/v1/me', {
+    const dataToken = await fetch('https://api.spotify.com/v1/me', {
       headers: {
-        'Authorization': `Bearer ${access_token}`
+        'Authorization': `Bearer ${accessToken}`
       }
     });
-    const dataJson = await data.json();
-     console.log(dataJson) 
+    const dataTokenJson = await dataToken.json();
+    console.log(dataTokenJson);
+
+    const dataAlbums = await fetch('https://api.spotify.com/v1/me/albums', {
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
+    });
+    const dataAlbumsJson = await dataAlbums.json();
+    console.log(dataAlbumsJson)
+
+    const dataPlaylists = await fetch('https://api.spotify.com/v1/me/playlists', {
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
+    });
+    const dataPlaylistsJson = await dataPlaylists.json();
+    console.log(dataPlaylistsJson)
+
+    
   }
+  
+
   return(
     <>
     <p>Hola music</p>

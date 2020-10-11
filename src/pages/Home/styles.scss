@@ -1,0 +1,16 @@
+@import '../../theme.scss';
+
+.link-login{
+  text-decoration: none;
+  color: $pallete1;
+  font-size: 1.5em;
+  font-weight: bolder;
+  display: block;
+  margin: 15rem auto;
+  text-align: center;
+  width: 15rem;
+  height: 4rem;
+  padding-top: 2rem;
+  border: 3px solid $pallete1;
+  border-radius: 10px;
+}

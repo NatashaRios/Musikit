@@ -49,7 +49,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background: rgb(134, 86, 108);
+	background: radial-gradient(circle, rgb(153, 96, 123) 0%, rgb(139, 99, 118) 35%, rgb(122, 60, 100) 65%);
 }
 
 code {
