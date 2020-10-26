@@ -1,10 +1,12 @@
 import React from 'react';
 import './styles.scss';
 
-function Playlists(){
+function Playlists({name}){
   return(
     <>
-      <p>Acá va crear una Playlists y las Playlists que hay</p>
+      <h3 className='playlists'>{name}</h3>
     </>
   )
 }
+
+export default Playlists;

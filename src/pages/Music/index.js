@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useLocation, useParams } from 'react-router-dom'; 
-
+import Navbar from '../../components/Navbar'
 import './styles.scss';
 
 function Music(){
@@ -47,10 +47,11 @@ function Music(){
     playlist: dataPlaylist
   }
   console.log(info.token)
-  console.log(info.playlist)
+  console.log(info.playlistsMe)
+  const userName = info.token.display_name;
   return(
     <>
-    <p>Hola music</p>
+      <Navbar user={userName}/>
     </>
   )
 }

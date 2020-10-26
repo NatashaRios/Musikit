@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.scss';
 
-function Logo(){
+function Logo({ name, icon }){
   return(
     <>
-      <p>Acá va Spotify y el logo</p>
+      <h1 className='logo'>{icon} {name}</h1>
     </>
   )
 }

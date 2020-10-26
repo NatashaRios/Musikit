@@ -1,11 +1,12 @@
 import React from 'react';
 import './styles.scss';
 
-function Items(){
+function Items({ name, icon }){
   return(
-    <>
-      <p>Acá va Inicio, Buscar y Tu Bliblioteca</p>
-    </>
+    <div className='items'>
+      <span className='items-icon'>{icon}</span>
+      <h3 className='items-name'>{name}</h3>
+    </div>
   )
 }
 

@@ -1,0 +1,14 @@
+@import '../../theme.scss';
+
+.navbar{
+    color: $pallete1;
+    height: 100vh;
+    width: 20rem;
+    background-color: rgb(134, 86, 108);
+    padding: 2rem 0 0 1.5rem;
+
+    .items-content{
+        margin: 2.5rem 0 2.5rem 0;
+    }
+    
+}

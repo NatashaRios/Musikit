@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.scss';
 
-function User(){
+function User({name}){
   return(
     <>
-      <p>Acá va el nombre del usuario</p>
+      <h3 className='user'>{name}</h3>
     </>
   )
 }
