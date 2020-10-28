@@ -4,10 +4,15 @@ import SelectAlbum from '../SelectAlbum';
 import Songs from '../Songs';
 import './styles.scss';
 
-function Content(){
+function Content({ infoItem, albums, artists, show }){
+ 
   return(
     <>
-      <p>Holis</p>
+      {infoItem == 'Home' && (
+        <>
+          <p>holis</p>
+        </>
+      )}
     </>
   )
 }
