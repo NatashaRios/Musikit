@@ -25,7 +25,9 @@ function Navbar({ user, playlists, handleInfo }){
         <Items name='Your library' icon={library} handleItem={handleItem}/>
       </div>
       <Playlists name='PLAYLISTS' playlists={playlists}/>
+      
       <User name={user}/>
+     
     </nav>
   )
 }
