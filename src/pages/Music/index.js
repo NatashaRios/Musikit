@@ -63,6 +63,7 @@ function Music(){
   function handleItem(name){
     setItem(name)
   }
+
   return(
     <div className='music-wrapper'>
       <Navbar user={userName} playlists={playlistsMe} handleInfo={handleItem}/>

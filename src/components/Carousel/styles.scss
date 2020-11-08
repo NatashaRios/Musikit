@@ -1,0 +1,40 @@
+@import '../../theme.scss';
+
+.carousel-content{
+  margin: 1rem 0 1rem 0.5rem;
+
+  border: 1px solid $pallete2;
+  background-color: $pallete2;
+  padding: 1rem;
+  border-radius: 10px;
+
+  &:hover{
+    background-color: rgb(168, 106, 134);
+  }
+  .carousel-img{
+    border-radius: 5px;
+  }
+  .carousel-img-computer{
+    width: 10rem;
+  }
+  .carousel-img-ipad{
+    display: none;
+  }
+  .carousel-img-mobile{
+    display: none;
+  }
+  .carousel-text{
+    width: 10rem;
+    margin: 0.5rem 0 0.7rem 0;
+    
+    .carousel-artist{
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+    .carousel-album{
+      font-size: 1em;
+    }
+  }
+}
