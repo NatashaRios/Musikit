@@ -59,7 +59,6 @@ function Music(){
   const show = info.show.shows;
   const recentlyPlayed = info.recentlyPlayed.items;
   
-  
   function handleItem(name){
     setItem(name)
   }
@@ -67,7 +66,7 @@ function Music(){
   return(
     <div className='music-wrapper'>
       <Navbar user={userName} playlists={playlistsMe} handleInfo={handleItem}/>
-      <Content infoItem={item} albums={albums} artists={artists} show={show} recentlyPlayed={recentlyPlayed} user={userName}/>
+      <Content infoItem={item} albums={albums} artists={artists} show={show} recentlyPlayed={recentlyPlayed} user={userName} albumsMe={albumsMe} playlists={playlistsMe} />
     </div>
   )
 }

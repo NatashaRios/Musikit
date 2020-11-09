@@ -1,17 +1,19 @@
 @import '../../theme.scss';
 
 .carousel-content{
+  //content de cada carousel
   margin: 1rem 0 1rem 0.5rem;
-
   border: 1px solid $pallete2;
   background-color: $pallete2;
   padding: 1rem;
   border-radius: 10px;
+  box-shadow: 0px 0px 8px 0px $pallete3;
 
   &:hover{
-    background-color: rgba(241, 95, 161, 0.267);
+    background-color:$pallete3;
   }
   .carousel-img{
+    //todas las imagenes
     border-radius: 5px;
   }
   .carousel-img-computer{
@@ -26,16 +28,19 @@
     display: none;
   }
   .carousel-text{
+    //todo el texto
     width: 10rem;
     margin: 0.5rem 0 0.7rem 0;
     
     .carousel-artist{
+      //artistas
       font-size: 1.2em;
       font-weight: bold;
       margin-bottom: 0.5rem;
       letter-spacing: 0.3px;
     }
     .carousel-album{
+      //album
       font-size: 1em;
     }
   }

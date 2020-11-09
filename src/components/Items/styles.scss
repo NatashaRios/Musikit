@@ -1,3 +1,4 @@
+@import '../../theme.scss';
 .items{
     font-weight: bold;
     display: flex;
@@ -16,3 +17,17 @@
         font-size: 1em;
     }
 }
+
+.items-content-name{
+    margin-right: 2.5rem;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: $pallete3;
+    }
+}
+

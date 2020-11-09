@@ -20,9 +20,9 @@ function Navbar({ user, playlists, handleInfo }){
     <nav className='navbar'>
       <Logo name='Musikit' icon={music}/>
       <div className='items-content'>
-        <Items name='Home' icon={home} handleItem={handleItem}/>
-        <Items name='Search' icon={search} handleItem={handleItem}/>
-        <Items name='Your library' icon={library} handleItem={handleItem}/>
+        <Items name='Home' icon={home} handleItem={handleItem} navbar={true}/>
+        <Items name='Search' icon={search} handleItem={handleItem} navbar={true}/>
+        <Items name='Your library' icon={library} handleItem={handleItem} navbar={true}/>
       </div>
       <Playlists name='PLAYLISTS' playlists={playlists}/>
       

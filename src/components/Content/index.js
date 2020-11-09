@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Carousel from '../Carousel';
+import Input from '../Input';
+import Items from '../Items';
 import SelectAlbum from '../SelectAlbum';
 import Songs from '../Songs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './styles.scss';
 
-function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
-  console.log(artists)
+function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albumsMe, playlists }){
+ 
+  const [inputValue, setInputValue] = useState('');
+  const [item, setItem] = useState('Playlists');
+ 
+  const iconSearch = <FontAwesomeIcon icon={faSearch} />
+
+  function handleSearch(value){
+    setInputValue(value)
+  }
+
+  function handleItem(name){
+    setItem(name)
+  }
+
   return(
-    <>
+    <div className='content-wrapper'>
       {infoItem == 'Home' && (
-        <div className='content-option-home'>
+        <>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>Shortcuts</h2>
-            <div className='carousel'>
+            <h2 className='title-option'>Shortcuts</h2>
+            <div className='carousel-home'>
               {albums && (
                 albums.slice(0,6).map((album, key) => {
                   return(
@@ -23,8 +40,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>Recently heard</h2>
-            <div className='carousel'>
+            <h2 className='title-option'>Recently heard</h2>
+            <div className='carousel-home'>
               {recentlyPlayed && (
                 recentlyPlayed.map((recently, key) => {
                   return(
@@ -35,8 +52,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>Programs that you may like</h2>
-            <div className='carousel'>
+            <h2 className='title-option'>Programs that you may like</h2>
+            <div className='carousel-home'>
               {show && (
                 show.map((podcast, key) => {
                   return(
@@ -47,8 +64,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>Made for {user}</h2>
-            <div className='carousel'>
+            <h2 className='title-option'>Made for {user}</h2>
+            <div className='carousel-home'>
               {artists && (
                 artists.slice(0,8).map((artist, key) => {
                   return(
@@ -59,8 +76,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>Based on recently heard</h2>
-            <div className='carousel'>
+            <h2 className='title-option'>Based on recently heard</h2>
+            <div className='carousel-home'>
             {artists && (
                 artists.slice(9,17).map((artist, key) => {
                   return(
@@ -71,8 +88,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>Releases</h2>
-            <div className='carousel'>
+            <h2 className='title-option'>Releases</h2>
+            <div className='carousel-home'>
             {albums && (
                 albums.slice(7, 11).map((album, key) => {
                   return(
@@ -83,8 +100,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-           <h2 className='title-option-home'>Hits</h2>
-           <div className='carousel'>
+           <h2 className='title-option'>Hits</h2>
+           <div className='carousel-home'>
             {albums && (
                 albums.slice(12, 16).map((album, key) => {
                   return(
@@ -95,8 +112,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>Recommended for today</h2>
-            <div className='carousel'>
+            <h2 className='title-option'>Recommended for today</h2>
+            <div className='carousel-home'>
             {artists && (
                 artists.slice(18,26).map((artist, key) => {
                   return(
@@ -107,8 +124,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>The best of each artist</h2>
-            <div className='carousel'>
+            <h2 className='title-option'>The best of each artist</h2>
+            <div className='carousel-home'>
             {albums && (
                 albums.slice(16, 20).map((album, key) => {
                   return(
@@ -119,8 +136,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>Put a soundtrack to your house </h2>
-            <div className='carousel'>
+            <h2 className='title-option'>Put a soundtrack to your house </h2>
+            <div className='carousel-home'>
             {artists && (
                 artists.slice(27,36).map((artist, key) => {
                   return(
@@ -131,8 +148,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-            <h2 className='title-option-home'>More things that you will like</h2>
-            <div className='carousel'>
+            <h2 className='title-option'>More things that you will like</h2>
+            <div className='carousel-home'>
             {artists && (
                 artists.slice(37,43).map((artist, key) => {
                   return(
@@ -143,8 +160,8 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
             </div>
           </div>
           <div className='carousel-wrapper'>
-           <h2 className='title-option-home'>To listen together</h2>
-           <div className='carousel'>
+           <h2 className='title-option'>To listen together</h2>
+           <div className='carousel-home'>
             {artists && (
                 artists.slice(44,50).map((artist, key) => {
                   return(
@@ -154,9 +171,110 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user }){
               )}
             </div>
           </div>
-        </div>
+        </>
       )}
-    </>
+
+      {infoItem == 'Search' && (
+        <>
+          <Input type='text' placeholder='Search for artists' icon={iconSearch} handleSearch={handleSearch}/>
+          <div className='carousel-wrapper'>
+            <h2 className='title-option'>Explore all</h2>
+            <div className='carousel'>
+              {albums && (
+                albums.filter((artist) => {
+                  return artist.artists[0].name.toLowerCase().includes(inputValue.toLowerCase());
+                }).map((album, key) => {
+                  return(
+                    <Carousel key={key} artist={album.artists[0].name} album={album.name} images={album.images} carousel={true} /> 
+                  )
+                })
+              )}
+              {artists && (
+                artists.filter((artist) => {
+                  return artist.name.toLowerCase().includes(inputValue.toLowerCase());
+                }).map((artist, key) => {
+                  return(
+                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                  )
+                })
+              )}
+              {show && (
+                show.filter((artist) => {
+                  return artist.name.toLowerCase().includes(inputValue.toLowerCase());
+                }).map((podcast, key) => {
+                  return(
+                    <Carousel key={key} artist={podcast.name} images={podcast.images} carousel={true} />
+                  )
+                })
+              )}
+              {recentlyPlayed && (
+                recentlyPlayed.filter((artist) => {
+                  return artist.track.artists[0].name.toLowerCase().includes(inputValue.toLowerCase());
+                }).map((recently, key) => {
+                  return(
+                    <Carousel key={key} artist={recently.track.artists[0].name} album={recently.track.album.name} images={recently.track.album.images} carousel={true} />
+                  )
+                })
+              )}
+              {albumsMe && (
+                albumsMe.filter((artist) => {
+                  return artist.album.artists[0].name.toLowerCase().includes(inputValue.toLowerCase());
+                }).map((album, key) => {
+                  return(
+                    <Carousel key={key} artist={album.album.artists[0].name} album={album.album.name} images={album.album.images} carousel={true} />
+                  )
+                })
+              )}
+            </div>
+          </div>
+        </>
+      )}
+
+      {infoItem == 'Your library' && (
+        <>
+          <div className='content-items'>
+            <Items name='Playlist' content={true} handleItem={handleItem} />
+            <Items name='Podcasts' content={true} handleItem={handleItem}/>
+            <Items name='Artists' content={true} handleItem={handleItem} />
+            <Items name='Albums' content={true} handleItem={handleItem} />
+          </div>
+          <div className='carousel-wrapper'>
+            <h2 className='title-option'>{item}</h2>
+            <div className='carousel'>
+              {item == 'Playlist' && (
+                playlists.map((playlist, key) => {
+                  return(
+                    <Carousel key={key} playlist={playlist.name} images={playlist.images} carousel={true} />
+                  )
+                })
+              )}
+              {item == 'Podcasts' && (
+                show.map((podcast, key) => {
+                  return(
+                    <Carousel key={key} artist={podcast.name} images={podcast.images} carousel={true} />
+                  )
+                })
+              )}
+              {item == 'Artists' && (
+                artists.map((artist, key) => {
+                  return(
+                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                  )
+                })
+              )}
+              {item == 'Albums' && (
+                albumsMe.map((album, key) => {
+                  return(
+                    <Carousel key={key} artist={album.album.artists[0].name} images={album.album.images} album={album.album.name} carousel={true} />
+                  )
+                })
+              )}
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+    
   )
 }
 

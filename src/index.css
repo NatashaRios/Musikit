@@ -50,7 +50,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(109, 20, 60);
-	background: radial-gradient(circle, rgba(112, 9, 57, 0.959) 0%, rgb(63, 2, 31) 35%, rgb(131, 11, 61) 65%);
+	background: radial-gradient(linear, rgba(112, 9, 57, 0.959) 0%, rgb(63, 2, 31) 35%, rgb(131, 11, 61) 65%);
 }
 
 code {

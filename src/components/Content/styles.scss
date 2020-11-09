@@ -1,24 +1,30 @@
 @import '../../theme.scss';
 
-.content-option-home{
-  //wrapper del home
+.content-wrapper{
+  //wrapper del content
 
-  color: $pallete1;
-  //margin-left: 2.5rem;
+    color: $pallete1;
     width: 88%;
     margin: 0 auto;
+
+    .content-items{
+      width: 30rem;
+      margin: 2rem auto;
+      display: flex;
+    }
+    
   .carousel-wrapper{
     //wrapper del carousel
     margin: 1.5rem 0 0 10rem;
         
-    .title-option-home{
-      //titulo de cada carousel
-      font-size: 1.2em;
-       font-weight: bold;
-    }
+  .title-option{
+    //todos los titulos (home, search y library)
+    font-size: 1.4em;
+    font-weight: bold;
+  }
 
-    .carousel{
-      //cada carousel
+    .carousel-home{
+      //cada carousel del home
       display: flex;
       width: 100%;
       margin-left: 0.5rem;
@@ -39,7 +45,8 @@
       &::-webkit-scrollbar-thumb {
         background-color: $pallete2;
         border-radius: 20px;
-        border: 1px solid $pallete1;
+        border: 1px solid $pallete3;
+        box-shadow: 0px 0px 17px 0px $pallete3;
     }
     
     &::-webkit-scrollbar-track {
@@ -47,5 +54,12 @@
     }
     
     }
+
+    .carousel{
+      //carousel de search
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }
+
