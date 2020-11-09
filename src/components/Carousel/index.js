@@ -4,7 +4,7 @@ import InnerCarousel from '../InnerCarousel';
 import './styles.scss';
 
 function Carousel({ artist, album, images, carousel}){
- 
+ console.log(images)
   return(
     <>
     {carousel && (

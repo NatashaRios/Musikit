@@ -9,13 +9,15 @@
   border-radius: 10px;
 
   &:hover{
-    background-color: rgb(168, 106, 134);
+    background-color: rgba(241, 95, 161, 0.267);
   }
   .carousel-img{
     border-radius: 5px;
   }
   .carousel-img-computer{
-    width: 10rem;
+    width: 10.5rem;
+    height: 10.5rem;
+    object-fit: cover;
   }
   .carousel-img-ipad{
     display: none;

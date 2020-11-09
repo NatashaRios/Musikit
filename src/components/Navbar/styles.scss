@@ -3,12 +3,13 @@
 .navbar{
     color: $pallete1;
     height: 100vh;
-    width: 16rem;
-    background-color: rgb(134, 86, 108);
+    width: 12%;
+    background-color: rgba(63, 3, 30, 0.699);
     padding: 2rem 0 0 1.5rem;
     display: flex;
     flex-direction: column;
-    
+    position: fixed;
+
     .items-content{
         margin: 2.5rem 0 2.5rem 0;
     }
