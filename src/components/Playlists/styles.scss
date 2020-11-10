@@ -1,16 +1,30 @@
+@import '../../theme.scss';
+
 .playlists{
+    //titulo
     font-size: 1em;
     font-weight: bold;
+
+    @media screen and (max-width: $mobile){
+        font-size: 0.8em;
+    }
 }
 .playlists-div-item{
+    //las playlists
     margin-top: 0.5rem;
 
     .playlists-item{
+        //cada playlist
         margin-top: 1rem;
         cursor: pointer;
 
         &:hover{
             color: white;
+        }
+
+        @media screen and (max-width: $mobile){
+            font-size: 0.8em;
+            line-height: 1rem;
         }
     }
 }

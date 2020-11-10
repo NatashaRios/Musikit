@@ -6,6 +6,14 @@
   width: 25rem;
   margin: 2rem auto;
 
+  @media screen and (max-width: $ipad){
+    margin-left: 10rem;
+  }
+
+  @media screen and (max-width: $mobile){
+    width: 20rem;
+  }
+
   .input-icon{
     //icono del input
     
@@ -27,6 +35,10 @@
 
     &::-webkit-input-placeholder { 
       color: $pallete1; 
+    }
+
+    @media screen and (max-width: $mobile){
+      width: 15rem;
     }
   }
 }

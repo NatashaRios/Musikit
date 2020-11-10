@@ -4,29 +4,51 @@
   //wrapper del content
 
     color: $pallete1;
-    width: 88%;
-    margin: 0 auto;
+    margin-left: 8rem;
+
+    @media screen and (max-width: $ipadpro){
+      margin-left: 6rem;
+    }
+    @media screen and (max-width: $mobile){
+      margin-left: 0.5rem;
+    }
 
     .content-items{
-      width: 30rem;
-      margin: 2rem auto;
+      //content de los items de your library
       display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      
+      @media screen and (max-width: $ipad){
+        margin-left: 10rem;
+      }
+      @media screen and (max-width: $mobile){
+        margin-left: 8rem;
+      }
     }
     
   .carousel-wrapper{
     //wrapper del carousel
     margin: 1.5rem 0 0 10rem;
+
+    @media screen and (max-width: $mobile){
+      margin-left: 9rem;
+    }
         
   .title-option{
     //todos los titulos (home, search y library)
     font-size: 1.4em;
     font-weight: bold;
+
+    @media screen and (max-width: $mobile){
+      font-size: 1em;
+    }
   }
 
     .carousel-home{
       //cada carousel del home
       display: flex;
-      width: 100%;
+      width: 80vw;
       margin-left: 0.5rem;
       overflow-x: auto;
 
@@ -59,6 +81,11 @@
       //carousel de search
       display: flex;
       flex-wrap: wrap;
+      width: 83vw;
+     
+      @media screen and (max-width: $mobile){
+       
+      }
     }
   }
 }

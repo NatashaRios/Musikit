@@ -1,5 +1,7 @@
 @import '../../theme.scss';
+
 .items{
+    //content de los items del home
     font-weight: bold;
     display: flex;
     padding: 1rem 0 1rem 1rem;
@@ -9,16 +11,33 @@
     &:hover{
         background-color: rgb(192, 129, 157);
     }
+
+    @media screen and (max-width: $mobile){
+        margin-left: -0.5rem;
+        padding-left: 0.5rem;
+    }
+
     .items-icon{
+        //los iconos
         margin-right: 1rem;
         font-size: 1.3rem;
+
+        @media screen and (max-width: $mobile){
+            font-size: 1em;
+        }
     }
     .items-name{
+        //los nombres
         font-size: 1em;
+
+        @media screen and (max-width: $mobile){
+            font-size: 0.8em;
+        }
     }
 }
 
 .items-content-name{
+    //items de your library
     margin-right: 2.5rem;
     font-size: 1.1em;
     font-weight: bold;
@@ -28,6 +47,15 @@
 
     &:hover{
         background-color: $pallete3;
+    }
+
+    @media screen and (max-width: $ipad){
+        margin-right: 1rem;
+    }
+    @media screen and (max-width: $mobile){
+        margin-right: 0;
+        font-size: 0.8em;
+        padding: 0.5rem;
     }
 }
 

@@ -2,13 +2,25 @@
 
 .navbar{
     color: $pallete1;
-    height: 100vh;
-    width: 12%;
+    height: 100%;
+    width: 14rem;
     background-color: rgba(63, 3, 30, 0.699);
     padding: 2rem 0 0 1.5rem;
     display: flex;
     flex-direction: column;
     position: fixed;
+    
+
+    @media screen and (max-width: $ipadpro){
+        width: 13rem;
+    }
+    @media screen and (max-width: $ipad){
+        width: 12rem;
+    }
+    @media screen and (max-width: $mobile){
+        width: 8rem;
+        padding-left: 0.5rem;
+    }
 
     .items-content{
         margin: 2.5rem 0 2.5rem 0;
