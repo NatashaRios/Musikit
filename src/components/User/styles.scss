@@ -1,5 +1,11 @@
+@import '../../theme.scss';
+
 .user{
     font-size: 1em;
     font-weight: bold;
     margin-top: 10rem;
+
+    @media screen and (max-width: $mobile){
+        display: none;
+    }
 }

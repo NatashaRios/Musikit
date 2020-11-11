@@ -14,7 +14,9 @@
 
     @media screen and (max-width: $mobile){
         margin-left: -0.5rem;
-        padding-left: 0.5rem;
+        //padding-left: 2rem;
+        flex-direction: column;
+        padding-right: 1rem;
     }
 
     .items-icon{
@@ -24,6 +26,9 @@
 
         @media screen and (max-width: $mobile){
             font-size: 1em;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            margin-right: 0;
         }
     }
     .items-name{

@@ -11,7 +11,8 @@
   }
 
   @media screen and (max-width: $mobile){
-    width: 20rem;
+    width: 15rem;
+    margin: 2rem 0 0 1rem;
   }
 
   .input-icon{
@@ -38,7 +39,7 @@
     }
 
     @media screen and (max-width: $mobile){
-      width: 15rem;
+      width: 100%;
     }
   }
 }

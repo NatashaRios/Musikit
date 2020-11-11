@@ -36,7 +36,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
               {albums && (
                 albums.slice(0,6).map((album, key) => {
                   return(
-                    <Carousel key={key} artist={album.artists[0].name} album={album.name} images={album.images} carousel={true}/>
+                    <Carousel key={key} infoAlbums={album}  carousel={true}/>
                   )
                 })
               )}
@@ -48,7 +48,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
               {recentlyPlayed && (
                 recentlyPlayed.map((recently, key) => {
                   return(
-                    <Carousel key={key} artist={recently.track.artists[0].name} album={recently.track.album.name} images={recently.track.album.images} carousel={true} />
+                    <Carousel key={key} infoRecently={recently} carousel={true} />
                   )
                 })
               )}
@@ -60,7 +60,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
               {show && (
                 show.map((podcast, key) => {
                   return(
-                    <Carousel key={key} artist={podcast.name} images={podcast.images} carousel={true} />
+                    <Carousel key={key} infoPodcast={podcast} carousel={true} />
                   )
                 })
               )}
@@ -72,7 +72,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
               {artists && (
                 artists.slice(0,8).map((artist, key) => {
                   return(
-                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                    <Carousel key={key} infoArtist={artist} carousel={true} />
                   )
                 })
               )}
@@ -84,7 +84,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
             {artists && (
                 artists.slice(9,17).map((artist, key) => {
                   return(
-                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                    <Carousel key={key} infoArtist={artist} carousel={true} />
                   )
                 })
               )}
@@ -96,7 +96,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
             {albums && (
                 albums.slice(7, 11).map((album, key) => {
                   return(
-                    <Carousel key={key} artist={album.artists[0].name} album={album.name} images={album.images} carousel={true}/>
+                    <Carousel key={key} infoAlbums={album} carousel={true}/>
                   )
                 })
               )}
@@ -108,7 +108,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
             {albums && (
                 albums.slice(12, 16).map((album, key) => {
                   return(
-                    <Carousel key={key} artist={album.artists[0].name} album={album.name} images={album.images} carousel={true}/>
+                    <Carousel key={key} infoAlbums={album} carousel={true}/>
                   )
                 })
               )}
@@ -120,7 +120,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
             {artists && (
                 artists.slice(18,26).map((artist, key) => {
                   return(
-                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                    <Carousel key={key} infoArtist={artist} carousel={true} />
                   )
                 })
               )}
@@ -132,7 +132,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
             {albums && (
                 albums.slice(16, 20).map((album, key) => {
                   return(
-                    <Carousel key={key} artist={album.artists[0].name} album={album.name} images={album.images} carousel={true}/>
+                    <Carousel key={key} infoAlbums={album} carousel={true}/>
                   )
                 })
               )}
@@ -144,7 +144,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
             {artists && (
                 artists.slice(27,36).map((artist, key) => {
                   return(
-                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                    <Carousel key={key} infoArtist={artist} carousel={true} />
                   )
                 })
               )}
@@ -156,7 +156,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
             {artists && (
                 artists.slice(37,43).map((artist, key) => {
                   return(
-                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                    <Carousel key={key} infoArtist={artist} carousel={true} />
                   )
                 })
               )}
@@ -168,7 +168,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
             {artists && (
                 artists.slice(44,50).map((artist, key) => {
                   return(
-                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                    <Carousel key={key} infoArtist={artist} carousel={true} />
                   )
                 })
               )}
@@ -189,7 +189,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
                   return artist.artists[0].name.toLowerCase().includes(inputValue.toLowerCase());
                 }).map((album, key) => {
                   return(
-                    <Carousel key={key} artist={album.artists[0].name} album={album.name} images={album.images} carousel={true} /> 
+                    <Carousel key={key} infoAlbums={album} carousel={true} /> 
                   )
                 })
               )}
@@ -198,7 +198,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
                   return artist.name.toLowerCase().includes(inputValue.toLowerCase());
                 }).map((artist, key) => {
                   return(
-                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                    <Carousel key={key} infoArtist={artist} carousel={true} />
                   )
                 })
               )}
@@ -207,7 +207,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
                   return artist.name.toLowerCase().includes(inputValue.toLowerCase());
                 }).map((podcast, key) => {
                   return(
-                    <Carousel key={key} artist={podcast.name} images={podcast.images} carousel={true} />
+                    <Carousel key={key} infoPodcast={podcast} carousel={true} />
                   )
                 })
               )}
@@ -216,7 +216,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
                   return artist.track.artists[0].name.toLowerCase().includes(inputValue.toLowerCase());
                 }).map((recently, key) => {
                   return(
-                    <Carousel key={key} artist={recently.track.artists[0].name} album={recently.track.album.name} images={recently.track.album.images} carousel={true} />
+                    <Carousel key={key} infoRecently={recently} carousel={true} />
                   )
                 })
               )}
@@ -225,7 +225,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
                   return artist.album.artists[0].name.toLowerCase().includes(inputValue.toLowerCase());
                 }).map((album, key) => {
                   return(
-                    <Carousel key={key} artist={album.album.artists[0].name} album={album.album.name} images={album.album.images} carousel={true} />
+                    <Carousel key={key} infoAlbumsMe={album} carousel={true} />
                   )
                 })
               )}
@@ -249,28 +249,28 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
               {item == 'Playlist' && (
                 playlists.map((playlist, key) => {
                   return(
-                    <Carousel key={key} playlist={playlist.name} images={playlist.images} carousel={true} />
+                    <Carousel key={key} infoPlaylists={playlist} carousel={true} />
                   )
                 })
               )}
               {item == 'Podcasts' && (
                 show.map((podcast, key) => {
                   return(
-                    <Carousel key={key} artist={podcast.name} images={podcast.images} carousel={true} />
+                    <Carousel key={key} infoPodcast={podcast} carousel={true} />
                   )
                 })
               )}
               {item == 'Artists' && (
                 artists.map((artist, key) => {
                   return(
-                    <Carousel key={key} artist={artist.name} images={artist.images} carousel={true} />
+                    <Carousel key={key} infoArtist={artist} carousel={true} />
                   )
                 })
               )}
               {item == 'Albums' && (
                 albumsMe.map((album, key) => {
                   return(
-                    <Carousel key={key} artist={album.album.artists[0].name} images={album.album.images} album={album.album.name} carousel={true} />
+                    <Carousel key={key} infoAlbumsMe={album} carousel={true} />
                   )
                 })
               )}
