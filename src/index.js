@@ -5,13 +5,13 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import Music from './pages/Music';
-import Playlist from './pages/Playlist';
+import PlaylistSelect from './pages/PlaylistSelect';
 
 ReactDOM.render(
   <Router>
     <Route exact path='/' component={Home} />
     <Route exact path='/Music' component={Music} />
-    <Router exact path ='/Playlist' component={Playlist} />
+    <Route exact path='/Playlist/:playlist' component={PlaylistSelect} />
   </Router>,
   document.getElementById('root')
 );
