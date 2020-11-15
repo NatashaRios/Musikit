@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 
 function Carousel({ carousel, infoAlbums, infoRecently, infoPodcast, infoArtist, infoAlbumsMe, infoPlaylists }){
- //console.log(infoAlbumsMe)
+ 
   return(
     <>
       {carousel && (

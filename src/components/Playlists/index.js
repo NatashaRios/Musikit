@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
 function Playlists({ name, playlists }){
+  
   return(
     <>
       <h3 className='playlists'>{name}</h3>
@@ -9,9 +11,9 @@ function Playlists({ name, playlists }){
         <div className='playlists-div-item'>
           {playlists.map((playlist, key) => {
             return(
-              <>
-                <p className='playlists-item'>{playlist.name}</p>
-              </>
+              <Link to={`/playlist/${playlist.uri}`}>
+                <p className='playlists-item' key={key}>{playlist.name}</p>
+              </Link>
             )
           })}
         </div>

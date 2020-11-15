@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import Carousel from '../Carousel';
 import Input from '../Input';
 import Items from '../Items';
-import SelectAlbum from '../SelectAlbum';
-import Songs from '../Songs';
+import SelectPlaylist from '../SelectPlaylist';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './styles.scss';
 
-function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albumsMe, playlists }){
+function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albumsMe, playlists, type, infoTypeAlbums, infoTypePodcast, infoTypeArtist, infoTypePlaylist }){
  
   const [inputValue, setInputValue] = useState(''); //el input del buscador en la seccion 'search'
   const [item, setItem] = useState('Playlists'); //los items de la seccion 'your library'
@@ -36,7 +35,7 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
               {albums && (
                 albums.slice(0,6).map((album, key) => {
                   return(
-                    <Carousel key={key} infoAlbums={album}  carousel={true}/>
+                    <Carousel key={key} infoAlbums={album} carousel={true}/>
                   )
                 })
               )}
@@ -278,8 +277,21 @@ function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albums
           </div>
         </>
       )}
+
+      {/* Mostrar la info segun el type seleccionado en la pagina Music */}
+      {type == 'album' && (
+        <SelectPlaylist infoAlbum={infoTypeAlbums} />
+      )}
+      {type == 'show' && (
+        <SelectPlaylist infoPodcast={infoTypePodcast} />
+      )}
+      {type == 'artist' && (
+        <SelectPlaylist infoArtist={infoTypeArtist} />
+      )}
+      {type == 'playlist' && (
+        <SelectPlaylist infoPlaylist={infoTypePlaylist} />
+      )}
     </div>
-    
   )
 }
 

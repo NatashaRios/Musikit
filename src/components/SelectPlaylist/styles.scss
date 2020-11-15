@@ -1,0 +1,64 @@
+@import '../../theme.scss';
+
+.playlist-content{
+  //content de las playlists
+
+  .playlist-info{
+    //content imagen, nombre del artista y del album
+    display: flex;
+    
+    .playlist-img-computer{
+      //imagen computadora
+
+      width: 12rem;
+      height: 12rem;
+      object-fit: cover;
+
+      @media screen and (max-width: $ipadpro){
+        width: 10rem;
+        height: 10rem;
+      }
+      @media screen and (max-width: $ipad){
+        display: none;
+      }
+    }
+    .playlist-img-ipad{
+      //imagen ipad
+
+      display: none;
+      width: 10rem;
+      height: 10rem;
+      object-fit: cover;
+
+      @media screen and (max-width: $ipad){
+        display: block;
+      }
+      @media screen and (max-width: $mobile){
+        display: none;
+      }
+    }
+    .playlist-img-mobile{
+      //imagen mobile
+
+      display: none;
+      width: 6rem;
+      height: 6rem;
+      object-fit: cover;
+
+      @media screen and (max-width: $mobile){
+        display: block;
+      }
+    }
+
+    .playlist-info-text{
+      //artista y/o album content
+
+      .playlist-text-album{
+        //album
+      }
+      .playlist-text-artist{
+        //artist
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ function Items({ name, icon, handleItem, navbar, content }){
 
   function handleClick(){
     handleItem(name)
+    //Mando la info del item clickeado (home, serch o your library / playlists, podcasts, artists o albums)
   }
   return(
     <>
