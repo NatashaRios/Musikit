@@ -3,7 +3,7 @@ import Songs from '../Songs';
 import './styles.scss';
 
 function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
-  console.log(infoPlaylist)
+  
   return(
     <div className='playlist-content'>
       {infoAlbum && (
@@ -110,7 +110,7 @@ function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
             infoPlaylist.tracks.items.map((track, key) => {
               return(
                 <ul>
-                  <Songs key={key} trackPlaylist={track} />
+                  <Songs key={key} trackPlaylist={track.track} />
                 </ul>
               )
             })

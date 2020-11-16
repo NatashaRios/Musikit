@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ListeningContext from '../../context/ListeningContext';
 import './styles.scss';
 
 function Songs({trackAlbum, trackPodcast, trackArtist, trackPlaylist}){
-  console.log(trackPlaylist)
+  
+  const handleTrack = useContext(ListeningContext);
+  
+  
+  function handleClick(){
+    trackAlbum && handleTrack(trackAlbum)
+    trackPodcast && handleTrack(trackPodcast)
+    trackArtist && handleTrack(trackArtist)
+    trackPlaylist && handleTrack(trackPlaylist)
+  }
   return(
     <>
       {trackAlbum && (
-        <li className='songs-content'>
+        <li className='songs-content' onClick={handleClick}>
           <p className='songs-number'>{trackAlbum.track_number}</p>
           <div className='songs-text'>
             <p className='songs-name'>{trackAlbum.name}</p>
@@ -15,7 +25,7 @@ function Songs({trackAlbum, trackPodcast, trackArtist, trackPlaylist}){
         </li>
       )}
       {trackPodcast && (
-        <li className='songs-content'>
+        <li className='songs-content' onClick={handleClick}>
           <div className='songs-text'>
             <p className='songs-name'>{trackPodcast.name}</p>
             <p className='songs-description'>{trackPodcast.description}</p>
@@ -23,7 +33,7 @@ function Songs({trackAlbum, trackPodcast, trackArtist, trackPlaylist}){
       </li>
       )}
       {trackArtist && (
-        <li className='songs-content'>
+        <li className='songs-content' onClick={handleClick}>
           <p className='songs-number'>{trackArtist.track_number}</p>
           <div className='songs-text'>
             <p className='songs-name'>{trackArtist.name}</p>
@@ -32,11 +42,11 @@ function Songs({trackAlbum, trackPodcast, trackArtist, trackPlaylist}){
         </li>
       )}
        {trackPlaylist && (
-        <li className='songs-content'>
-          <p className='songs-number'>{trackPlaylist.track.track_number}</p>
+        <li className='songs-content' onClick={handleClick}>
+          <p className='songs-number'>{trackPlaylist.track_number}</p>
           <div className='songs-text'>
-            <p className='songs-name'>{trackPlaylist.track.name}</p>
-            {trackPlaylist.track.artists.map((track) => {
+            <p className='songs-name'>{trackPlaylist.name}</p>
+            {trackPlaylist.artists.map((track) => {
               return(
                 <p className='songs-artist'>{track.name}</p>
               )

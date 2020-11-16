@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Content from '../../components/Content';
+import Listening from '../../components/Listening';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { useParams } from 'react-router-dom';
+import { ListeningProvider } from '../../context/ListeningContext';
 import './styles.scss';
 
 function PlaylistSelect(){
@@ -22,6 +24,8 @@ function PlaylistSelect(){
   const [typeArtist, setTypeArtist] = useState({});
   const [typeTracksArtist, setTypeTracksArtist] = useState({});
   const [typePlaylist, setTypePlaylist] = useState({});
+
+  const [infoTracks, setInfoTracks] = useState({});
 
   useEffect(() => {
      fetchData(); 
@@ -94,11 +98,15 @@ function PlaylistSelect(){
     tracks: info.typePlaylist.tracks
   }
 
+  function handleTrack(info){
+    setInfoTracks(info)
+  }
   
   return(
-    <>
+    <ListeningProvider value={handleTrack}>
       <Content type={type} infoTypeAlbums={infoTypeAlbums} infoTypePodcast={infoTypePodcast} infoTypeArtist={infoTypeArtist} infoTypePlaylist={infoTypePlaylist} />
-    </>
+      <Listening infoTracks={infoTracks}/>
+    </ListeningProvider>
   )
 }
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import './styles.scss';
 
-function PlayListening(){
+function PlayListening({songTrackUrl}){
+  console.log(songTrackUrl)
   return(
     <>
-      <p>Acá va el play y todas esas opciones y la línea de la duración</p>
+      <video src={songTrackUrl} controls></video>
     </>
   )
 }
