@@ -2,11 +2,30 @@
 
 .playlist-content{
   //content de las playlists
+  width: 50rem;
+  margin: 2rem auto;
+  color: $pallete1;
+  margin-bottom: 5rem;
+
+  .playlist-icon-arrow{
+    margin-left: -10rem;
+    font-size: 2em;
+    color: $pallete1;
+  }
 
   .playlist-info{
     //content imagen, nombre del artista y del album
     display: flex;
-    
+    margin: -2rem 0 1.5rem 0;
+    background-color: $pallete3;
+    box-shadow: 5px 5px 15px 15px $pallete3;
+    padding: 0.5rem;
+
+      .playlist-img{
+        //todas las imagenes
+        border-radius: 5px;
+      }
+
     .playlist-img-computer{
       //imagen computadora
 
@@ -52,12 +71,23 @@
 
     .playlist-info-text{
       //artista y/o album content
+      margin: 3rem 0 0 1rem;
 
       .playlist-text-album{
         //album
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 1rem;
       }
       .playlist-text-artist{
         //artist
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      .playlist-text-quantity{
+        //cantidad de tracks
+        font-size: 1em;
       }
     }
   }

@@ -1,11 +1,16 @@
 import React from 'react';
 import './styles.scss';
 
-function PlayListening({songTrackUrl}){
+function PlayListening({songTrackUrl, episodeUrl}){
   console.log(songTrackUrl)
   return(
     <>
-      <video src={songTrackUrl} controls></video>
+    {songTrackUrl && (
+      <video className='playListening-track' src={songTrackUrl} controls></video>
+    )}
+    {episodeUrl && (
+      <video className='playListening-track' src={episodeUrl} controls></video>
+    )}
     </>
   )
 }

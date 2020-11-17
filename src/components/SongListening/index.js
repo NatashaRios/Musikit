@@ -2,9 +2,25 @@ import React from 'react';
 import './styles.scss';
 
 function SongListening({songTrackName, songTrackArtist, episodeName}){
+ 
+  
   return(
     <>
-      <p>Acá va la canción, el cantante y la img</p>
+      <div className='songListening-content'>
+        {songTrackName && (
+          <p className='songListening-name'>{songTrackName}</p>
+        )}
+        {songTrackArtist && (
+          songTrackArtist.map((artist, key) => {
+            return(
+              <p className='songListening-artist' key={key}>- {artist}</p>
+            )
+          })
+        )}
+        {episodeName && (
+          <p className='songListening-episode'>{episodeName}</p>
+        )}
+      </div>
     </>
   )
 }
