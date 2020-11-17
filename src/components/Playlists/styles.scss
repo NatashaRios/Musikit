@@ -1,7 +1,7 @@
 @import '../../theme.scss';
 
 .playlists{
-    //titulo
+    //Titulo
     font-size: 1em;
     font-weight: bold;
 
@@ -15,7 +15,7 @@
     margin-top: 0.5rem;
 
     .playlists-item{
-        //cada playlist
+        //Cada playlist
         margin-top: 1rem;
         cursor: pointer;
 
@@ -24,8 +24,6 @@
         }
 
         @media screen and (max-width: $mobile){
-            /* font-size: 0.8em;
-            line-height: 1rem; */
             display: none;
         }
     }

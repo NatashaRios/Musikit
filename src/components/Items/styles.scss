@@ -1,7 +1,7 @@
 @import '../../theme.scss';
 
 .items{
-    //content de los items del home
+    //Content de los items del home
     font-weight: bold;
     display: flex;
     padding: 1rem 0 1rem 1rem;
@@ -14,7 +14,6 @@
 
     @media screen and (max-width: $mobile){
         margin-left: -0.5rem;
-        //padding-left: 2rem;
         flex-direction: column;
         padding-right: 1rem;
     }
@@ -42,7 +41,7 @@
 }
 
 .items-content-name{
-    //items de your library
+    //Items de your library
     margin-right: 2.5rem;
     font-size: 1.1em;
     font-weight: bold;

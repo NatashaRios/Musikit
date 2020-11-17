@@ -1,7 +1,7 @@
 @import '../../theme.scss';
 
 .carousel-content{
-  //content de cada carousel
+  //Content de cada carousel
   margin: 1rem 0 1rem 0.5rem;
   border: 1px solid $pallete2;
   background-color: $pallete2;
@@ -25,11 +25,11 @@
   }
 
   .carousel-img{
-    //todas las imagenes
+    //Todas las imágenes
     border-radius: 5px;
   }
   .carousel-img-computer{
-    //imagenes en computadora
+    //Imágenes en computadora
     width: 12rem;
     height: 12rem;
     object-fit: cover;
@@ -43,7 +43,7 @@
     }
   }
   .carousel-img-ipad{
-    //imagenes en ipad
+    //Imágenes en ipad
     display: none;
     width: 10rem;
     height: 10rem;
@@ -57,6 +57,7 @@
     }
   }
   .carousel-img-mobile{
+    //Imágenes en mobile
     display: none;
     width: 6rem;
     height: 6rem;
@@ -67,9 +68,7 @@
     }
   }
   .carousel-text{
-    //todo el texto
-    //width: 10rem;
-    //margin: 0.5rem 0 0.7rem 0;
+    //Todo el texto
     text-align: center;
     margin-top: 0.5rem;
 
@@ -78,7 +77,7 @@
     }
     
     .carousel-artist{
-      //artistas
+      //Artistas
       font-size: 1.2em;
       font-weight: bold;
       margin-bottom: 0.5rem;
@@ -90,7 +89,7 @@
       }
     }
     .carousel-album{
-      //album
+      //Album
       font-size: 1em;
 
       @media screen and (max-width: $mobile){

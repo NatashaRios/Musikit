@@ -8,20 +8,20 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './styles.scss';
 
 function Content({ infoItem, albums, artists, show, recentlyPlayed, user, albumsMe, playlists, type, infoTypeAlbums, infoTypePodcast, infoTypeArtist, infoTypePlaylist }){
- 
-  const [inputValue, setInputValue] = useState(''); //el input del buscador en la seccion 'search'
-  const [item, setItem] = useState('Playlists'); //los items de la seccion 'your library'
+  
+  const [inputValue, setInputValue] = useState(''); //El input del buscador en la sección 'search'
+  const [item, setItem] = useState(''); //los items de la sección 'your library'
  
   const iconSearch = <FontAwesomeIcon icon={faSearch} />
 
   function handleSearch(value){
     setInputValue(value)
-    //le paso lo que va escribiendo en el input de la seccion 'search'
+    //le paso lo que va escribiendo en el input de la sección 'search'
   }
 
   function handleItem(name){
     setItem(name)
-    //le paso que item se selecciona, ya sea en el navbar o en la seccion 'your library'
+    //le paso que item se selecciona, ya sea en el navbar o en la sección 'your library'
   }
 
   return(

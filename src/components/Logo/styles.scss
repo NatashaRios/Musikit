@@ -1,12 +1,11 @@
 @import '../../theme.scss';
 
 .logo{
-    //logo de la app
+    //Logo de la app
     font-size: 2em;
     font-weight: bolder;
 
     @media screen and (max-width: $mobile){
-        //ont-size: 1.3em;
         display: none;
     }
 }

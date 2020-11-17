@@ -7,13 +7,15 @@ import './styles.scss';
 
 function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
 
-  const iconArrow = <FontAwesomeIcon icon={faArrowCircleLeft} />
+  const iconArrow = <FontAwesomeIcon icon={faArrowCircleLeft} /> //Icono de la flecha para atrás
 
   return(
     <div className='playlist-content'>
       <Link to='/Music'>
         <p className='playlist-icon-arrow'>{iconArrow}</p>
       </Link>
+
+      {/* Cuando se selecciona un album */}
       {infoAlbum && (
         <>
           <div className='playlist-info'>
@@ -47,6 +49,8 @@ function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
           )}
         </>
       )}
+
+      {/* Cuando se selecciona un podcast */}
        {infoPodcast && (
          <>
           <div className='playlist-info'>
@@ -77,6 +81,8 @@ function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
           )}
         </>
       )}
+
+      {/* Cuando se selecciona un artista */}
       {infoArtist && (
         <>
           <div className='playlist-info'>
@@ -107,6 +113,8 @@ function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
           )}
         </>
       )}
+
+     {/*  Cuando se selecciona una playlist */}
       {infoPlaylist && (
         <>
           <div className='playlist-info'>

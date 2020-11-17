@@ -1,6 +1,7 @@
 @import '../../theme.scss';
 
 .music-wrapper{
+    //Wrapper de la página Music
     display: flex;
 
     @media screen and (max-width: $mobile){

@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.scss';
 
 function PlayListening({songTrackUrl, episodeUrl}){
-  console.log(songTrackUrl)
+ 
   return(
     <>
     {songTrackUrl && (

@@ -5,13 +5,19 @@ import './styles.scss';
 
 function Listening({infoTracks}){
   
-  const songTrackName = infoTracks.type == 'track' && infoTracks.name;
+  const songTrackName = infoTracks.type == 'track' && infoTracks.name; //Nombre del track
+
+  //Nombre del artista
   const songTrackArtist = infoTracks.type == 'track' && infoTracks.artists.map((artist) => {
     return artist.name;
   })
-  const songTrackUrl = infoTracks.type == 'track' && infoTracks.preview_url;
-  const episodeName = infoTracks.type == 'episode' && infoTracks.name;
-  const episodeUrl = infoTracks.type == 'episode' && infoTracks.audio_preview_url;
+
+  const songTrackUrl = infoTracks.type == 'track' && infoTracks.preview_url; //La url del track
+  
+  const episodeName = infoTracks.type == 'episode' && infoTracks.name; //Nombre del episodio del podcast
+
+  const episodeUrl = infoTracks.type == 'episode' && infoTracks.audio_preview_url; //La url del episodio
+  
   return(
     <div className='listening-content'>
       {infoTracks.type == 'track' && (

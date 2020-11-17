@@ -38,6 +38,7 @@ function Music(){
     fetchData('https://api.spotify.com/v1/shows/?ids=0sGGLIDnnijRPLef7InllD,78Ycp2RECumPsuyU19tWve,4TmUpG1YdJMa4aAnp9s21F,5vxQG5ojhOnmXkiPz5kbFq,7gPEMuy4IshaQvxYUdv9Ps,1fSBZMkSa9f0nneEznduqs,40vVHnRwYqihg2raORQuxU', setDataShow);
     fetchData('https://api.spotify.com/v1/me/player/recently-played', setDataRecentlyPlayed);
 
+    //Redireccionar a la página home si no esta el token
     if(!accessToken){
       history.push('/')
     }
@@ -57,7 +58,7 @@ function Music(){
       handleSave(accessToken);
   }
   
-  //Objeto con toda la info traida del state
+  //Objeto con toda la info traída del state
   const info = {
     token: dataToken,
     albumsMe: dataAlbumsMe,

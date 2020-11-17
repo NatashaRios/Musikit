@@ -1,14 +1,11 @@
 @import '../../theme.scss';
 
 .listening-content{
+  //Content del listening
   width: 100%;
   background-color: rgba(63, 3, 30, 0.866);
   display: flex;
   justify-content: space-around;
   position: fixed;
   bottom: 0;
-
-  @media screen and (max-width: $mobile){
-    
-  }
 }

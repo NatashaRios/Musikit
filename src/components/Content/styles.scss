@@ -1,7 +1,7 @@
 @import '../../theme.scss';
 
 .content-wrapper{
-  //wrapper del content
+  //Wrapper del content
 
     color: $pallete1;
     margin-left: 8rem;
@@ -10,35 +10,30 @@
       margin-left: 6rem;
     }
     @media screen and (max-width: $mobile){
-      //margin-left: 0.5rem;
       margin: 0 0 2.5rem 0;
     }
 
     .content-items{
-      //content de los items de your library
+      //Content de los items de your library
       display: flex;
       justify-content: center;
       margin-top: 2rem;
       
-      @media screen and (max-width: $ipad){
-        margin-left: 10rem;
-      }
       @media screen and (max-width: $mobile){
         margin-left: 0;
       }
     }
     
   .carousel-wrapper{
-    //wrapper del carousel
+    //Wrapper del carousel
     margin: 1.5rem 0 0 10rem;
 
     @media screen and (max-width: $mobile){
-      //margin-left: 9rem;
       margin-left: 1rem;
     }
         
   .title-option{
-    //todos los titulos (home, search y library)
+    //Todos los títulos
     font-size: 1.4em;
     font-weight: bold;
 
@@ -48,7 +43,7 @@
   }
 
     .carousel-home{
-      //cada carousel del home
+      //Cada carousel del home
       display: flex;
       width: 76.5vw;
       margin-left: 0.5rem;
@@ -84,13 +79,13 @@
     }
 
     .carousel{
-      //carousel de search
+      //Carousel de search y your library
       display: flex;
       flex-wrap: wrap;
       width: 77.1vw;
-     
-      @media screen and (max-width: $mobile){
-       
+
+      @media screen and (max-width: $ipadpro){
+        margin: 1rem 0 0 2rem;
       }
     }
   }

@@ -1,7 +1,7 @@
 @import '../../theme.scss';
 
 .songListening-content{
-  //content info traida del track seleccionado
+  //Content info traída del track seleccionado
   color: $pallete1;
   margin-top: 0.6rem;
 
@@ -10,7 +10,7 @@
   }
 
   .songListening-name{
-    //nombre del track
+    //Nombre del track
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -22,7 +22,7 @@
     }
   }
   .songListening-artist{
-    //nombre del artista
+    //Nombre del artista
     font-size: 1em;
     display: inline;
     margin-right: 0.5rem;
@@ -32,7 +32,7 @@
     }
   }
   .songListening-episode{
-    //nombre del episodio
+    //Nombre del episodio
     font-size: 1.2em;
     font-weight: bold;
 

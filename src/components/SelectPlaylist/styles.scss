@@ -1,7 +1,7 @@
 @import '../../theme.scss';
 
 .playlist-content{
-  //content de las playlists
+  //Content de las playlists
   width: 50rem;
   margin: 2rem auto;
   color: $pallete1;
@@ -17,6 +17,7 @@
   }
 
   .playlist-icon-arrow{
+    //Icono de la flecha para atrás
     margin-left: -10rem;
     font-size: 2em;
     color: $pallete1;
@@ -31,7 +32,7 @@
   }
 
   .playlist-info{
-    //content imagen, nombre del artista y del album
+    //Content imagen, nombre del artista y del album
     display: flex;
     margin: -2rem 0 1.5rem 0;
     background-color: $pallete3;
@@ -43,12 +44,12 @@
     }
 
       .playlist-img{
-        //todas las imagenes
+        //Todas las imágenes
         border-radius: 5px;
       }
 
     .playlist-img-computer{
-      //imagen computadora
+      //Imagen computadora
 
       width: 12rem;
       height: 12rem;
@@ -63,7 +64,7 @@
       }
     }
     .playlist-img-ipad{
-      //imagen ipad
+      //Imagen ipad
 
       display: none;
       width: 10rem;
@@ -78,7 +79,7 @@
       }
     }
     .playlist-img-mobile{
-      //imagen mobile
+      //Imagen mobile
 
       display: none;
       width: 6rem;
@@ -91,23 +92,23 @@
     }
 
     .playlist-info-text{
-      //artista y/o album content
+      //Artista y/o album content
       margin: 3rem 0 0 1rem;
 
       .playlist-text-album{
-        //album
+        //Album
         font-size: 2em;
         font-weight: bold;
         margin-bottom: 1rem;
       }
       .playlist-text-artist{
-        //artist
+        //Artist
         font-size: 1.5em;
         font-weight: bold;
         margin-bottom: 1rem;
       }
       .playlist-text-quantity{
-        //cantidad de tracks
+        //Cantidad de tracks
         font-size: 1em;
       }
     }

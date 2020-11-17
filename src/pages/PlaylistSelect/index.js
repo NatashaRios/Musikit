@@ -20,7 +20,7 @@ function PlaylistSelect(){
   
   const history = useHistory();
   
-  //Guardar la info traida
+  //Guardar la info traída
   const [typeAlbum, setTypeAlbum] = useState({});
   const [typePodcast, setTypePodcast] = useState({});
   const [typeArtist, setTypeArtist] = useState({});
@@ -32,6 +32,7 @@ function PlaylistSelect(){
   useEffect(() => {
      fetchData(); 
 
+     //Redireccionar a la página Home si no esta el token
      if(!accessToken){
       history.push('/')
     }
@@ -39,7 +40,7 @@ function PlaylistSelect(){
   
   
   async function fetchData(){
-    //Fetchs dependiendo del type e id traido 
+    //Fetchs dependiendo del type e id traído 
     if(type == 'album' || type == 'playlist' || type == 'show' || type == 'artist'){
       const data = await fetch(`https://api.spotify.com/v1/${type}s/${id}`, {
         headers: {
@@ -104,6 +105,7 @@ function PlaylistSelect(){
     tracks: info.typePlaylist.tracks
   }
 
+  //Traigo el track seleccionado para reproducir mediante api context
   function handleTrack(info){
     setInfoTracks(info)
   }

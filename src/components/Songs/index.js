@@ -6,7 +6,7 @@ function Songs({trackAlbum, trackPodcast, trackArtist, trackPlaylist}){
   
   const handleTrack = useContext(ListeningContext);
   
-  
+  //Mando la info del track seleccionado mediante api context
   function handleClick(){
     trackAlbum && handleTrack(trackAlbum)
     trackPodcast && handleTrack(trackPodcast)
@@ -34,7 +34,6 @@ function Songs({trackAlbum, trackPodcast, trackArtist, trackPlaylist}){
       )}
       {trackArtist && (
         <li className='songs-content' onClick={handleClick}>
-         {/*  <p className='songs-number'>{trackArtist.track_number}</p> */}
           <div className='songs-text'>
             <p className='songs-name'>{trackArtist.name}</p>
             <p className='songs-artist'>{trackArtist.artists[0].name}</p>
@@ -43,7 +42,6 @@ function Songs({trackAlbum, trackPodcast, trackArtist, trackPlaylist}){
       )}
        {trackPlaylist && (
         <li className='songs-content' onClick={handleClick}>
-          {/* <p className='songs-number'>{trackPlaylist.track_number}</p> */}
           <div className='songs-text'>
             <p className='songs-name'>{trackPlaylist.name}</p>
             {trackPlaylist.artists.map((track) => {
