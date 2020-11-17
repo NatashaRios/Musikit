@@ -22,6 +22,10 @@
     margin: 0 auto;
     letter-spacing: 0.2px;
 
+    @media screen and (max-width: $mobile){
+      width: 100%;
+    }
+
     .songs-name{
       //cancion
       font-size: 1em;

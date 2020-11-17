@@ -7,10 +7,27 @@
   color: $pallete1;
   margin-bottom: 5rem;
 
+  @media screen and (max-width: $ipad){
+    width: 33rem;
+  }
+
+  @media screen and (max-width: $mobile){
+    margin: 1rem 0 5rem 0;
+    width: 100%;
+  }
+
   .playlist-icon-arrow{
     margin-left: -10rem;
     font-size: 2em;
     color: $pallete1;
+
+    @media screen and (max-width: $ipadpro){
+      margin-left: -8rem;
+    }
+
+    @media screen and (max-width: $mobile){
+      margin-left: 0.5rem;
+    }
   }
 
   .playlist-info{
@@ -20,6 +37,10 @@
     background-color: $pallete3;
     box-shadow: 5px 5px 15px 15px $pallete3;
     padding: 0.5rem;
+
+    @media screen and (max-width: $mobile){
+      margin-top: 0.5rem;
+    }
 
       .playlist-img{
         //todas las imagenes

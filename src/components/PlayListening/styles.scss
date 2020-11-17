@@ -1,5 +1,12 @@
+@import '../../theme.scss';
+
 .playListening-track{
   height: 6rem;
   outline: none;
   margin: -2rem 0 0.5rem 0;
+
+  @media screen and (max-width: $mobile){
+    height: 4rem;
+    margin-top: 0;
+  }
 }

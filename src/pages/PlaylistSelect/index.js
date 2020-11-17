@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Content from '../../components/Content';
 import Listening from '../../components/Listening';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { ListeningProvider } from '../../context/ListeningContext';
 import './styles.scss';
 
@@ -18,6 +18,8 @@ function PlaylistSelect(){
   const type = arr[1];
   const id = arr[2];
   
+  const history = useHistory();
+  
   //Guardar la info traida
   const [typeAlbum, setTypeAlbum] = useState({});
   const [typePodcast, setTypePodcast] = useState({});
@@ -29,6 +31,10 @@ function PlaylistSelect(){
 
   useEffect(() => {
      fetchData(); 
+
+     if(!accessToken){
+      history.push('/')
+    }
   },[])
   
   

@@ -5,7 +5,6 @@ import './styles.scss';
 
 function Listening({infoTracks}){
   
-  
   const songTrackName = infoTracks.type == 'track' && infoTracks.name;
   const songTrackArtist = infoTracks.type == 'track' && infoTracks.artists.map((artist) => {
     return artist.name;

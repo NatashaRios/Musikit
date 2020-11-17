@@ -3,23 +3,41 @@
 .songListening-content{
   //content info traida del track seleccionado
   color: $pallete1;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
+
+  @media screen and (max-width: $mobile){
+    margin-left: 0.3rem;
+  }
 
   .songListening-name{
     //nombre del track
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 0.5rem;
+
+    @media screen and (max-width: $mobile){
+      font-size: 1em;
+      margin-bottom: 0.3rem;
+      line-height: 1.3rem;
+    }
   }
   .songListening-artist{
     //nombre del artista
     font-size: 1em;
     display: inline;
     margin-right: 0.5rem;
+
+    @media screen and (max-width: $mobile){
+      font-size: 0.8em;
+    }
   }
   .songListening-episode{
     //nombre del episodio
     font-size: 1.2em;
     font-weight: bold;
+
+    @media screen and (max-width: $mobile){
+      font-size: 1em;
+    }
   }
 }
