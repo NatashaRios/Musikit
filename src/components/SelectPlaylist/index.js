@@ -73,9 +73,9 @@ function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
           {infoPodcast.tracks && (
             infoPodcast.tracks.items.map((track, key) => {
               return(
-                <ul>
+                <ol>
                   <Songs key={key} trackPodcast={track} />
-                </ul>
+                </ol>
               )
             })
           )}
@@ -105,9 +105,9 @@ function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
           {infoArtist.tracks && (
             infoArtist.tracks.map((track, key) => {
               return(
-                <ul>
+                <ol>
                   <Songs key={key} trackArtist={track} />
-                </ul>
+                </ol>
               )
             })
           )}
@@ -137,9 +137,9 @@ function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
           {infoPlaylist.tracks && (
             infoPlaylist.tracks.items.map((track, key) => {
               return(
-                <ul>
+                <ol>
                   <Songs key={key} trackPlaylist={track.track} />
-                </ul>
+                </ol>
               )
             })
           )}
