@@ -4,10 +4,13 @@ import Listening from '../../components/Listening';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { useParams, useHistory } from 'react-router-dom';
 import { ListeningProvider } from '../../context/ListeningContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
 import './styles.scss';
 
 function PlaylistSelect(){
 
+  
   //Traigo el token guardado en local storage 
   const [getter] = useLocalStorage();
   
@@ -19,7 +22,11 @@ function PlaylistSelect(){
   
   const history = useHistory();
 
- 
+  const iconArrow = <FontAwesomeIcon icon={faArrowCircleLeft} /> //Icono de la flecha para atrás
+
+  function handleBack(){
+    history.push(`/music#access_token=${accessToken}`)
+  }
   
   //Guardar la info traída
   const [typeAlbum, setTypeAlbum] = useState({});
@@ -128,6 +135,7 @@ function PlaylistSelect(){
   
   return(
     <ListeningProvider value={handleTrack}>
+      <p className='playlist-icon-arrow' onClick={handleBack}>{iconArrow}</p>
       <Content type={type} infoTypeAlbums={infoTypeAlbums} infoTypePodcast={infoTypePodcast} infoTypeArtist={infoTypeArtist} infoTypePlaylist={infoTypePlaylist} />
       <Listening infoTracks={infoTracks} userProduct={userProduct}/>
     </ListeningProvider>

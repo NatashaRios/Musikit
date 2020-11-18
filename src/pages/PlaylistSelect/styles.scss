@@ -1,0 +1,12 @@
+@import '../../theme.scss';
+
+.playlist-icon-arrow{
+  //Icono de la flecha para atrás
+  margin: 2rem 0 0 2rem;
+  font-size: 2em;
+  color: $pallete1;
+
+  @media screen and (max-width: $mobile){
+    margin: 0.5rem 0 0 0.5rem;
+  }
+}

@@ -3,6 +3,7 @@ import SongListening from '../SongListening';
 import PlayListening from '../PlayListening';
 import SpotifyPlayer from 'react-spotify-web-playback';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { isMobile, isSafari } from "react-device-detect";
 import './styles.scss';
 
 function Listening({infoTracks, userProduct}){
@@ -26,12 +27,15 @@ function Listening({infoTracks, userProduct}){
   
   return(
     <div className='listening-content'>
-      {/* Si es un usuario premium puede usar la librería */}
-      {userProduct == 'premium' ? (
+      {/* Si es un usuario premium, es desde la computadora y no es safari puede usar la librería */}
+      {userProduct == 'premium' && !isMobile && !isSafari ? (
         <SpotifyPlayer
           token={accessToken}
           uris={infoUri}
-  
+          autoPlay='true'
+          play='true'
+          showSaveIcon='true'
+
           styles={{
             bgColor: 'rgba(63, 3, 30, 0.866)',
             color: 'rgb(223, 217, 217)',
@@ -40,6 +44,7 @@ function Listening({infoTracks, userProduct}){
             savedColor: 'red',
             trackArtistColor: 'rgb(223, 217, 217)',
             trackNameColor: 'rgb(223, 217, 217)',
+            height: 50
           }}
         />
 

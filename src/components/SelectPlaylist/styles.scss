@@ -16,21 +16,6 @@
     width: 100%;
   }
 
-  .playlist-icon-arrow{
-    //Icono de la flecha para atrás
-    margin-left: -10rem;
-    font-size: 2em;
-    color: $pallete1;
-
-    @media screen and (max-width: $ipadpro){
-      margin-left: -8rem;
-    }
-
-    @media screen and (max-width: $mobile){
-      margin-left: 0.5rem;
-    }
-  }
-
   .playlist-info{
     //Content imagen, nombre del artista y del album
     display: flex;

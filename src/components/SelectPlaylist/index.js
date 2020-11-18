@@ -1,20 +1,11 @@
 import React from 'react';
 import Songs from '../Songs';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
 import './styles.scss';
 
 function SelectPlaylist({infoAlbum, infoPodcast, infoArtist, infoPlaylist}){
 
-  const iconArrow = <FontAwesomeIcon icon={faArrowCircleLeft} /> //Icono de la flecha para atrás
-
   return(
     <div className='playlist-content'>
-      <Link to='/Music'>
-        <p className='playlist-icon-arrow'>{iconArrow}</p>
-      </Link>
-
       {/* Cuando se selecciona un album */}
       {infoAlbum && (
         <>
