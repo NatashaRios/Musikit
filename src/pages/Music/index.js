@@ -15,6 +15,7 @@ function Music(){
   
   //Local Storage hecho en custom hooks
   const [getter, handleSave] = useLocalStorage();
+  const [getterProduct, handleProduct] = useLocalStorage();
 
   //Para guardar la info de las apis
   const [dataToken, setDataToken] = useState({});
@@ -24,7 +25,6 @@ function Music(){
   const [dataArtists, setDataArtists] = useState({});
   const [dataShow, setDataShow] = useState({});
   const [dataRecentlyPlayed, setDataRecentlyPlayed] = useState({});
-  
   
   const [item, setItem] = useState('Home'); //Para los items seleccionados (home, search o your library)
   
@@ -56,6 +56,7 @@ function Music(){
 
       //Guardo el token en el local storage
       handleSave(accessToken);
+      
   }
   
   //Objeto con toda la info traída del state
@@ -68,7 +69,7 @@ function Music(){
     show: dataShow,
     recentlyPlayed: dataRecentlyPlayed
   }
-
+  
   const userName = info.token.display_name; //Usuario
   const playlistsMe = info.playlistsMe.items; //Playlists del usuario
   const albumsMe = info.albumsMe.items; //Albums del usuario
@@ -81,7 +82,7 @@ function Music(){
   function handleItem(name){
     setItem(name)
   }
-
+  
   return(
     <div className='music-wrapper'>
       <Navbar user={userName} playlists={playlistsMe} titlePlaylist='PLAYLISTS' handleInfo={handleItem}/>

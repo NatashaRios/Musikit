@@ -10,15 +10,16 @@ function PlaylistSelect(){
 
   //Traigo el token guardado en local storage 
   const [getter] = useLocalStorage();
+  
   const accessToken = getter[getter.length - 1];
   
   //Saco info del type e id de la url
   const { playlist } = useParams();
-  const arr = playlist.split(':');
-  const type = arr[1];
-  const id = arr[2];
+  const [, type, id] = playlist.split(':')
   
   const history = useHistory();
+
+ 
   
   //Guardar la info traída
   const [typeAlbum, setTypeAlbum] = useState({});
@@ -27,10 +28,12 @@ function PlaylistSelect(){
   const [typeTracksArtist, setTypeTracksArtist] = useState({});
   const [typePlaylist, setTypePlaylist] = useState({});
 
-  const [infoTracks, setInfoTracks] = useState({});
+  const [infoTracks, setInfoTracks] = useState({}); //Para guardar la info de los tracks seleccionados
+  const [infoUser, setInfoUser] = useState({}); //Para guardar la info del user
 
   useEffect(() => {
-     fetchData(); 
+     fetchData(); //Fetch para la info traída al clickear en la página anterior
+     fetchUser(); //Fetch para la info del usuario
 
      //Redireccionar a la página Home si no esta el token
      if(!accessToken){
@@ -49,10 +52,10 @@ function PlaylistSelect(){
       });
       const json = await data.json();
      
-      type == 'album' && setTypeAlbum(json);
-      type == 'show' && setTypePodcast(json);
-      type == 'artist' && setTypeArtist(json);
-      type == 'playlist' && setTypePlaylist(json);
+      type == 'album' && setTypeAlbum(json); //Guardo la info del type album
+      type == 'show' && setTypePodcast(json); //Guardo la info del type podcast
+      type == 'artist' && setTypeArtist(json); //Guardo la info del type artist
+      type == 'playlist' && setTypePlaylist(json); //Guardo la info del type playlist
     }
 
     if(type == 'artist'){
@@ -63,10 +66,23 @@ function PlaylistSelect(){
       });
       const json = await data.json();
       
-      setTypeTracksArtist(json)
+      setTypeTracksArtist(json) //Guardo la info de los tracks de artist
     }
   }
 
+  async function fetchUser(){
+    const data = await fetch('https://api.spotify.com/v1/me', {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
+      });
+      const json = await data.json();
+      setInfoUser(json); //Guardo la info del usuario
+  }
+
+  
+  const userProduct = infoUser && infoUser.product; //Info del product (si es premium o no)
+  
   //Objeto donde guardo la info del state
   const info = {
     typeAlbum: typeAlbum,
@@ -113,7 +129,7 @@ function PlaylistSelect(){
   return(
     <ListeningProvider value={handleTrack}>
       <Content type={type} infoTypeAlbums={infoTypeAlbums} infoTypePodcast={infoTypePodcast} infoTypeArtist={infoTypeArtist} infoTypePlaylist={infoTypePlaylist} />
-      <Listening infoTracks={infoTracks}/>
+      <Listening infoTracks={infoTracks} userProduct={userProduct}/>
     </ListeningProvider>
   )
 }

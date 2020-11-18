@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
 function Carousel({ carousel, infoAlbums, infoRecently, infoPodcast, infoArtist, infoAlbumsMe, infoPlaylists }){
- 
+
   return(
     <>
       {carousel && (
@@ -22,7 +22,7 @@ function Carousel({ carousel, infoAlbums, infoRecently, infoPodcast, infoArtist,
             </Link>
           )}
           {infoRecently && (
-            <Link to={`/playlist/${infoRecently.context.uri}`}>
+            <Link to={`/playlist/${infoRecently.track.album.uri}`}>
               <div className='carousel-content'>
                 <img className='carousel-img-computer carousel-img' src={infoRecently.track.album.images[0].url} alt={infoRecently.track.artists[0].name}/>
                 <img className='carousel-img-ipad carousel-img' src={infoRecently.track.album.images[1].url} alt={infoRecently.track.artists[0].name}/>

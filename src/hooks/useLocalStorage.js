@@ -10,6 +10,7 @@ export const useLocalStorage = () => {
 
     localStorage.setItem('token', stringifiedToken);
   };
+
   //Fin del setter
 
   //Getter
@@ -18,4 +19,5 @@ export const useLocalStorage = () => {
   //Fin del getter
 
   return [parsedToken, handleSave];
+  
 };
