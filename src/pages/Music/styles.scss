@@ -3,8 +3,17 @@
 .music-wrapper{
     //Wrapper de la página Music
     display: flex;
-
+    
+    
     @media screen and (max-width: $mobile){
         display: block;
+    }
+}
+
+.music-footer{
+    margin-left: 1rem;
+
+    @media screen and(max-width: $mobile){
+        display: none;
     }
 }

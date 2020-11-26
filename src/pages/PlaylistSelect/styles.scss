@@ -10,3 +10,20 @@
     margin: 0.5rem 0 0 0.5rem;
   }
 }
+
+.playlist-footer{
+ width: 20rem;
+ margin: 0 0 5rem 0.5rem;
+ position: fixed;
+ bottom: 0;
+
+ @media screen and (max-width: $ipadpro){
+   margin: 0 0 7rem 0;
+   width: 10.5rem;
+   text-align: center;
+ }
+
+ @media screen and (max-width: $mobile){
+   display: none;
+ }
+}

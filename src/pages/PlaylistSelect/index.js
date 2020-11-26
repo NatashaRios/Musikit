@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Content from '../../components/Content';
 import Listening from '../../components/Listening';
+import Footer from '../../components/Footer';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { useParams, useHistory } from 'react-router-dom';
 import { ListeningProvider } from '../../context/ListeningContext';
@@ -138,6 +139,9 @@ function PlaylistSelect(){
       <p className='playlist-icon-arrow' onClick={handleBack}>{iconArrow}</p>
       <Content type={type} infoTypeAlbums={infoTypeAlbums} infoTypePodcast={infoTypePodcast} infoTypeArtist={infoTypeArtist} infoTypePlaylist={infoTypePlaylist} />
       <Listening infoTracks={infoTracks} userProduct={userProduct}/>
+      <div className='playlist-footer'>
+        <Footer />
+      </div>
     </ListeningProvider>
   )
 }

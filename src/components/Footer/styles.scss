@@ -1,0 +1,31 @@
+@import '../../theme.scss';
+
+.footer-content{
+  position: absolute;
+  bottom: 0;
+
+  .footer-text{
+    color: $pallete1;
+    display: block;
+    margin-bottom: 0.5rem;
+
+    .footer-web{
+      cursor: pointer;
+       text-shadow: 0 0 2.5px $pallete1;
+    }
+  }
+  .footer-content-links{
+    text-align: center;
+
+    .footer-link{
+      .footer-link-img-linkedin{
+        width: 1.7rem;
+      }
+      .footer-link-img-github{
+        width: 2.7rem;
+        display: inline-block;
+        margin-bottom: -0.5rem;
+      }
+    }
+  }
+}

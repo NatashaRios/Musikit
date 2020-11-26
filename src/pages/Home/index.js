@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../components/Footer';
 import './styles.scss';
 
 function Home(){
@@ -10,6 +11,8 @@ function Home(){
       
       {/* Url para que funcione en localhost */}
       {/* <a className='link-login' href='https://accounts.spotify.com/es-ES/authorize?client_id=2cdf605804824d54a2aa9167bab2b9c4&redirect_uri=http:%2F%2Flocalhost:3000%2Fmusic&response_type=token&scope=user-library-modify user-follow-read playlist-read-private user-read-recently-played streaming user-read-email user-read-private user-read-playback-state user-modify-playback-state user-library-read'>Login to Musikit</a> */}
+    
+      <Footer />
     </div>
   )
 }
