@@ -139,9 +139,6 @@ function PlaylistSelect(){
       <p className='playlist-icon-arrow' onClick={handleBack}>{iconArrow}</p>
       <Content type={type} infoTypeAlbums={infoTypeAlbums} infoTypePodcast={infoTypePodcast} infoTypeArtist={infoTypeArtist} infoTypePlaylist={infoTypePlaylist} />
       <Listening infoTracks={infoTracks} userProduct={userProduct}/>
-      <div className='playlist-footer'>
-        <Footer />
-      </div>
     </ListeningProvider>
   )
 }

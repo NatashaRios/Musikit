@@ -85,15 +85,10 @@ function Music(){
   }
   
   return(
-    <>
     <div className='music-wrapper'>
       <Navbar user={userName} playlists={playlistsMe} titlePlaylist='PLAYLISTS' handleInfo={handleItem}/>
       <Content infoItem={item} albums={albums} artists={artists} show={show} recentlyPlayed={recentlyPlayed} user={userName} albumsMe={albumsMe} playlists={playlistsMe} />
     </div>
-    <div className='music-footer'>
-      <Footer />
-    </div>
-    </>
   )
 }
 
